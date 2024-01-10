@@ -26,28 +26,34 @@ const Main = () => {
   }
 
   const { scrollYProgress } = useScroll({ target: landingContainerRef });
-  const firstOpacity = useTransform(scrollYProgress, [0, 0.1, 0.3, 0.4, 0.7, 0.8], [0.1, 1, 1, 0, 0, 1],);
-  const secondOpacity = useTransform(scrollYProgress, [0.4, 0.5, 0.6, 0.7, 0.8], [0, 1, 1, 0, 1]);
-  const firstY = useTransform(scrollYProgress, [0.7, 0.8], [0, -0.08 * screenSize.width]);
-  const secondY = useTransform(scrollYProgress, [0.7, 0.8], [0, 0.08 * screenSize.width]);
+  // const firstOpacity = useTransform(scrollYProgress, [0, 0.1, 0.3, 0.4, 0.7, 0.8], [0.1, 1, 1, 0, 0, 1],);
+  // const secondOpacity = useTransform(scrollYProgress, [0.4, 0.5, 0.6, 0.7, 0.8], [0, 1, 1, 0, 1]);
+  // const firstY = useTransform(scrollYProgress, [0.7, 0.8], [0, -0.08 * screenSize.width]);
+  // const secondY = useTransform(scrollYProgress, [0.7, 0.8], [0, 0.08 * screenSize.width]);
 
   return (
     <div ref={landingContainerRef} className='h-[800vh] bg-black flex flex-col items-center'>
       <motion.div className='fixed h-screen w-full flex flex-col items-center justify-center'>
         <motion.div className='fixed w-3/4'
-          style={{
-            opacity: firstOpacity,
-            y: firstY
-          }}>
+          animate={{ opacity: [0, 1, 1, 0] }}
+          transition={{ duration: 1 }}
+        // style={{
+        //   opacity: firstOpacity,
+        //   y: firstY
+        // }}
+        >
           <NO_WHERE />
         </motion.div>
         <motion.div className='fixed w-3/4 z-10'
-          style={{
-            opacity: secondOpacity,
-            y: secondY
-          }}
+          animate={{ opacity: [0, 1, 1, 0] }}
+          transition={{ duration: 1, delay: 1.2 }}
+        // style={{
+        //   opacity: secondOpacity,
+        //   y: secondY
+        // }}
         >
           <NOW_HERE />
+          
         </motion.div>
       </motion.div >
     </div>
