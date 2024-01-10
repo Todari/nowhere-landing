@@ -1,29 +1,19 @@
-import { useEffect, useState } from "react";
 import { ReactComponent as SUBMENU } from "../asset/header_submenu.svg";
 import { ReactComponent as SUBMENU_CLOSE } from "../asset/header_submenu_close.svg";
+import { useAppSelector, useAppDispatch } from "../../hooks";
+import { setShowSubMenuDropdown } from "../../store/headerStateReducer";
 
-type SubMenuProp = {
-  handleDropdown: (value: boolean) => void
-  openHeader: boolean
-}
-
-const SubMenu = ({ handleDropdown, openHeader }: SubMenuProp) => {
-  const [openDropdown, setOpenDropdown] = useState(false)
-
-  useEffect(() => {
-    if (!openHeader) {
-      setOpenDropdown(false)
-    }
-    handleDropdown(openDropdown)
-  }, [openDropdown, openHeader])
-
+const SubMenu = () => {
+  const { showHeader, showSubMenuDropdown } = useAppSelector((state) => state.headerState)
+  const dispatch = useAppDispatch();
+  
   return (
     <div>
-      {!openDropdown ?
-        <div className="flex" onClick={() => { setOpenDropdown(true) }} >
+      {!showSubMenuDropdown ?
+        <div className="flex" onClick={() => { dispatch(setShowSubMenuDropdown(true))}} >
           <SUBMENU className="h-8 w-8" />
         </div>
-        : <div className="flex" onClick={() => { setOpenDropdown(false) }} >
+        : <div className="flex" onClick={() => { dispatch(setShowSubMenuDropdown(false)) }} >
           <SUBMENU_CLOSE className="h-8 w-8" />
         </div>}
 

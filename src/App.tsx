@@ -9,6 +9,8 @@ import Albums from './Albums/Albums';
 
 import { Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { useAppSelector, useAppDispatch } from './hooks';
+import { setShowHeader, setShowSubMenuDropdown } from '../src/store/headerStateReducer';
 
 type scrollPosition = {
   prev: number,
@@ -17,7 +19,8 @@ type scrollPosition = {
 
 function App() {
   const [scrollPosition, setScrollPosition] = useState<scrollPosition>({ prev: window.scrollY, current: window.scrollY })
-  const [isScrollDown, setIsScrollDown] = useState(false);
+  const { showHeader, showSubMenuDropdown } = useAppSelector((state) => state.headerState)
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -28,15 +31,16 @@ function App() {
 
   const handleScroll = () => {
     setScrollPosition({ prev: scrollPosition.current, current: window.scrollY });
-    setIsScrollDown(scrollPosition.prev <= scrollPosition.current)
+    dispatch(setShowHeader(scrollPosition.prev > scrollPosition.current));
+    dispatch(setShowSubMenuDropdown(false))
     if (window.scrollY < 50) {
-      setIsScrollDown(false)
+      dispatch(setShowHeader(true));
     }
   }
 
   return (
     <div className="App">
-      <Header visible={!isScrollDown} />
+      <Header visible={showHeader} />
       <Routes>
         <Route path='/' Component={Main} />
         <Route path='/about-us' Component={AboutUs} />

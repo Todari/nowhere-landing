@@ -5,6 +5,11 @@ import { ReactComponent as NOWHERE_LOGO } from './asset/nowhere_logo.svg';
 import Menu from "./components/Menu";
 import SubMenu from "./components/SubMenu";
 import SubMenuDropdown from "./components/SubMenuDropdown";
+import { useAppSelector, useAppDispatch } from "../hooks";
+import {
+  setShowHeader,
+  setShowSubMenuDropdown,
+} from '../store/headerStateReducer';
 
 type HeaderProp = {
   visible: boolean
@@ -16,6 +21,9 @@ const Header = ({ visible }: HeaderProp) => {
   const goHome = () => { navigate('/') }
   const [headerY, setHeaderY] = useState(0);
   const [subMenuY, setSubMenuY] = useState(0);
+  const [openDropdown, setOpenDropdown] = useState(false);
+  const { showHeader, showSubMenuDropdown } = useAppSelector((state) => state.headerState)
+  const dispatch = useAppDispatch();
 
   const [screenSize, setScreenSize] = useState({
     width: window.screen.width,
@@ -36,33 +44,33 @@ const Header = ({ visible }: HeaderProp) => {
     })
     if (screenSize.width >= 768) {
       setOpenDropdown(false);
-    } 
+      dispatch(setShowSubMenuDropdown(false))
+    }
   }
 
-  const [openDropdown, setOpenDropdown] = useState(false);
 
   const handleDropdown = (value: boolean) => {
     setOpenDropdown(value);
   }
 
   useEffect(() => {
-    if (visible) {
+    if (showHeader) {
       setHeaderY(0)
     } else {
       setHeaderY(-80)
     }
-  }, [visible])
+  }, [showHeader])
 
   useEffect(() => {
-    if (openDropdown) {
+    if (showSubMenuDropdown) {
       setSubMenuY(0)
     } else {
       setSubMenuY(-240)
     }
-  }, [openDropdown])
+  }, [showSubMenuDropdown])
 
   return (
-    <motion.div className="fixed flex w-full flex-col z-10"
+    <motion.div className="fixed flex w-full flex-col z-20"
       animate={{ y: headerY }}
       transition={{ duration: 0.3 }}>
       <div className='top-0 w-full flex flex-row gap-4 h-16 justify-center items-center bg-black z-20'>
@@ -79,7 +87,7 @@ const Header = ({ visible }: HeaderProp) => {
           </div>
           {screenSize.width >= 768 ?
             <Menu /> :
-            <SubMenu handleDropdown={handleDropdown} openHeader={visible} />
+            <SubMenu />
           }
         </div >
       </div>
