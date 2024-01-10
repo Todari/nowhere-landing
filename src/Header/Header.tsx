@@ -10,7 +10,7 @@ import { setShowSubMenuDropdown } from '../store/headerStateReducer';
 
 const Header = () => {
   const navigate = useNavigate();
-  const goHome = () => { navigate('/') }
+  const goHome = () => { navigate('/'); dispatch(setShowSubMenuDropdown(false)) }
   const [headerY, setHeaderY] = useState(0);
   const [subMenuY, setSubMenuY] = useState(0);
   const { showHeader, showSubMenuDropdown } = useAppSelector((state) => state.headerState)
@@ -37,7 +37,6 @@ const Header = () => {
     if (screenSize.width >= 768) {
       dispatch(setShowSubMenuDropdown(false))
     }
-
   }
 
   useEffect(() => {
