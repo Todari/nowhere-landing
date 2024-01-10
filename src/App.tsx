@@ -3,6 +3,9 @@ import './App.css';
 import Main from './Main/Main'
 import Header from './Header/Header';
 import AboutUs from './AboutUs/AboutUs';
+import Artists from './Artists/Artists';
+import Labels from './Labels/Labels';
+import Albums from './Albums/Albums';
 
 import { Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -37,6 +40,9 @@ function App() {
       <Routes>
         <Route path='/' Component={Main} />
         <Route path='/about-us' Component={AboutUs} />
+        <Route path='/artists' Component={Artists} />
+        <Route path='/labels' Component={Labels} />
+        <Route path='/albums' Component={Albums} />
       </Routes>
     </div>
   );

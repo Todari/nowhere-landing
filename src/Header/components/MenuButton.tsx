@@ -7,11 +7,11 @@ type MenuButtonProp = {
 
 const MenuButton = ({ title, path }: MenuButtonProp) => {
   const navigate = useNavigate();
-  const goPath = navigate(path);
+  const goPath = () => { navigate(path); }
 
   return (
     <div className='py-2 px-4'>
-      <div className='text-white' onClick={() => goPath}>
+      <div className='text-white' onClick={() => goPath()}>
         {title}
       </div>
     </div>
