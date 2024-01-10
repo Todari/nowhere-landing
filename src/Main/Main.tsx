@@ -26,7 +26,7 @@ const Main = () => {
   }
 
   const { scrollYProgress } = useScroll({ target: landingContainerRef });
-  const firstOpacity = useTransform(scrollYProgress, [0, 0.1, 0.3, 0.4, 0.7, 0.8], [0, 1, 1, 0, 0, 1],);
+  const firstOpacity = useTransform(scrollYProgress, [0, 0.1, 0.3, 0.4, 0.7, 0.8], [0.1, 1, 1, 0, 0, 1],);
   const secondOpacity = useTransform(scrollYProgress, [0.4, 0.5, 0.6, 0.7, 0.8], [0, 1, 1, 0, 1]);
   const firstY = useTransform(scrollYProgress, [0.7, 0.8], [0, -0.08 * screenSize.width]);
   const secondY = useTransform(scrollYProgress, [0.7, 0.8], [0, 0.08 * screenSize.width]);
