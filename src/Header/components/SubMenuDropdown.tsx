@@ -1,27 +1,14 @@
+import MenuButton from "./MenuButton";
+import MENU_LIST from "../../constant/MenuList";
+
 const SubMenuDropdown = () => {
+  const menuList: JSX.Element[] = MENU_LIST.list.map(
+    (menu) => <MenuButton key={menu.id} title={menu.title} path={menu.path} />
+  );
   return (
     <div className="z-10 w-full flex justify-center items-center p-4">
       <div className="flex gap-4 flex-col">
-        <div className='py-2 px-4'>
-          <div className='text-white'>
-            About Us
-          </div>
-        </div>
-        <div className='py-2 px-4'>
-          <div className='text-white'>
-            Artists
-          </div>
-        </div>
-        <div className='py-2 px-4'>
-          <div className='text-white'>
-            Labels
-          </div>
-        </div>
-        <div className='py-2 px-4'>
-          <div className='text-white'>
-            Albums
-          </div>
-        </div>
+        {menuList}
       </div>
     </div>
   )

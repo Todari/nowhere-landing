@@ -1,27 +1,15 @@
+import MenuButton from "./MenuButton"
+import MENU_LIST from "../../constant/MenuList"
+
 const Menu = () => {
+
+  const menuList: JSX.Element[] = MENU_LIST.list.map(
+    (menu) => <MenuButton key={menu.id} title={menu.title} path={menu.path} />
+  );
 
   return (
     <div className="flex gap-4">
-      <div className='py-2 px-4'>
-        <div className='text-white'>
-          About Us
-        </div>
-      </div>
-      <div className='py-2 px-4'>
-        <div className='text-white'>
-          Artists
-        </div>
-      </div>
-      <div className='py-2 px-4'>
-        <div className='text-white'>
-          Labels
-        </div>
-      </div>
-      <div className='py-2 px-4'>
-        <div className='text-white'>
-          Albums
-        </div>
-      </div>
+      {menuList}
     </div>
   )
 }
