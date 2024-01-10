@@ -14,7 +14,7 @@ const Menu = () => {
       </div>
       <div className='py-2 px-4'>
         <div className='text-white'>
-          labels
+          Labels
         </div>
       </div>
       <div className='py-2 px-4'>

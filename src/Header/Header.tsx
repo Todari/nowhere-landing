@@ -34,6 +34,9 @@ const Header = ({ visible }: HeaderProp) => {
       width: window.screen.width,
       height: window.screen.height
     })
+    if (screenSize.width >= 768) {
+      setOpenDropdown(false);
+    } 
   }
 
   const [openDropdown, setOpenDropdown] = useState(false);
