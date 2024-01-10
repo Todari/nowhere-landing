@@ -9,7 +9,12 @@ const Menu = () => {
       </div>
       <div className='py-2 px-4'>
         <div className='text-white'>
-          Artist
+          Artists
+        </div>
+      </div>
+      <div className='py-2 px-4'>
+        <div className='text-white'>
+          labels
         </div>
       </div>
       <div className='py-2 px-4'>
