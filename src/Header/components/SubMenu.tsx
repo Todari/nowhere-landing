@@ -4,13 +4,13 @@ import { useAppSelector, useAppDispatch } from "../../hooks";
 import { setShowSubMenuDropdown } from "../../store/headerStateReducer";
 
 const SubMenu = () => {
-  const { showHeader, showSubMenuDropdown } = useAppSelector((state) => state.headerState)
+  const { showSubMenuDropdown } = useAppSelector((state) => state.headerState)
   const dispatch = useAppDispatch();
-  
+
   return (
     <div>
       {!showSubMenuDropdown ?
-        <div className="flex" onClick={() => { dispatch(setShowSubMenuDropdown(true))}} >
+        <div className="flex" onClick={() => { dispatch(setShowSubMenuDropdown(true)) }} >
           <SUBMENU className="h-8 w-8" />
         </div>
         : <div className="flex" onClick={() => { dispatch(setShowSubMenuDropdown(false)) }} >

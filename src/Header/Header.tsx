@@ -6,22 +6,13 @@ import Menu from "./components/Menu";
 import SubMenu from "./components/SubMenu";
 import SubMenuDropdown from "./components/SubMenuDropdown";
 import { useAppSelector, useAppDispatch } from "../hooks";
-import {
-  setShowHeader,
-  setShowSubMenuDropdown,
-} from '../store/headerStateReducer';
+import { setShowSubMenuDropdown } from '../store/headerStateReducer';
 
-type HeaderProp = {
-  visible: boolean
-}
-
-const Header = ({ visible }: HeaderProp) => {
-  const viewWidth = window.screen.width;
+const Header = () => {
   const navigate = useNavigate();
   const goHome = () => { navigate('/') }
   const [headerY, setHeaderY] = useState(0);
   const [subMenuY, setSubMenuY] = useState(0);
-  const [openDropdown, setOpenDropdown] = useState(false);
   const { showHeader, showSubMenuDropdown } = useAppSelector((state) => state.headerState)
   const dispatch = useAppDispatch();
 
@@ -32,10 +23,11 @@ const Header = ({ visible }: HeaderProp) => {
 
   useEffect(() => {
     window.addEventListener('resize', handleScreenSize)
+    console.log(screenSize)
     return () => {
       window.removeEventListener('resize', handleScreenSize)
     }
-  }, [window])
+  }, [window.screen.width])
 
   const handleScreenSize = () => {
     setScreenSize({
@@ -43,14 +35,9 @@ const Header = ({ visible }: HeaderProp) => {
       height: window.screen.height
     })
     if (screenSize.width >= 768) {
-      setOpenDropdown(false);
       dispatch(setShowSubMenuDropdown(false))
     }
-  }
 
-
-  const handleDropdown = (value: boolean) => {
-    setOpenDropdown(value);
   }
 
   useEffect(() => {

@@ -9,7 +9,7 @@ import Albums from './Albums/Albums';
 
 import { Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { useAppSelector, useAppDispatch } from './hooks';
+import {  useAppDispatch } from './hooks';
 import { setShowHeader, setShowSubMenuDropdown } from '../src/store/headerStateReducer';
 
 type scrollPosition = {
@@ -19,7 +19,6 @@ type scrollPosition = {
 
 function App() {
   const [scrollPosition, setScrollPosition] = useState<scrollPosition>({ prev: window.scrollY, current: window.scrollY })
-  const { showHeader, showSubMenuDropdown } = useAppSelector((state) => state.headerState)
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -40,7 +39,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header visible={showHeader} />
+      <Header/>
       <Routes>
         <Route path='/' Component={Main} />
         <Route path='/about-us' Component={AboutUs} />

@@ -16,7 +16,7 @@ const Main = () => {
     return () => {
       window.removeEventListener('resize', handleScreenSize)
     }
-  }, [window])
+  }, [window.screen.width])
 
   const handleScreenSize = () => {
     setScreenSize({
