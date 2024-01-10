@@ -1,7 +1,9 @@
 import React from 'react';
-import Main from './main/Main'
 import './App.css';
-import Header from './header/Header';
+import Main from './Main/Main'
+import Header from './Header/Header';
+import AboutUs from './AboutUs/AboutUs';
+
 import { Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
@@ -34,7 +36,7 @@ function App() {
       <Header visible={!isScrollDown} />
       <Routes>
         <Route path='/' Component={Main} />
-        {/* <Route path='/apply' Component={Apply} /> */}
+        <Route path='/about-us' Component={AboutUs} />
       </Routes>
     </div>
   );
