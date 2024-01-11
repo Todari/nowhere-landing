@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 import headerStateReducer from './headerStateReducer'
+import screenSizeReducer from './screenSizeReducer'
 // ...
 
 const store = configureStore({
   reducer: {
-    headerState: headerStateReducer
+    headerState: headerStateReducer,
+    screenSize: screenSizeReducer,
   }
 })
 

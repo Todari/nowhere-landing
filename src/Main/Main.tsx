@@ -2,14 +2,14 @@ import { ReactComponent as NO_WHERE } from './asset/no_where.svg';
 import { ReactComponent as NOW_HERE } from './asset//now_here.svg';
 import { useEffect, useRef, useState } from 'react';
 import { motion, useTransform, useScroll } from 'framer-motion';
+import { useAppDispatch, useAppSelector } from '../hooks';
+import { setScreenSize } from '../store/screenSizeReducer';
 
 const Main = () => {
   const landingContainerRef = useRef(null);
 
-  const [screenSize, setScreenSize] = useState({
-    width: window.screen.width,
-    height: window.screen.height
-  })
+  const { width, height } = useAppSelector((state) => state.screenSize);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     window.addEventListener('resize', handleScreenSize)
@@ -19,10 +19,11 @@ const Main = () => {
   }, [window.screen.width])
 
   const handleScreenSize = () => {
-    setScreenSize({
-      width: window.screen.width,
-      height: window.screen.height
-    })
+    dispatch(setScreenSize([window.screen.width, window.screen.height]))
+    // setScreenSize({
+    //   width: window.screen.width,
+    //   height: window.screen.height
+    // })
   }
 
   const { scrollYProgress } = useScroll({ target: landingContainerRef });
@@ -53,7 +54,7 @@ const Main = () => {
         // }}
         >
           <NOW_HERE />
-          
+
         </motion.div>
       </motion.div >
     </div>

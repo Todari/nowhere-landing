@@ -9,8 +9,9 @@ import Albums from './Albums/Albums';
 
 import { Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import {  useAppDispatch } from './hooks';
+import { useAppSelector, useAppDispatch } from './hooks';
 import { setShowHeader, setShowSubMenuDropdown } from '../src/store/headerStateReducer';
+import { setScreenSize } from './store/screenSizeReducer';
 
 type scrollPosition = {
   prev: number,
@@ -19,7 +20,22 @@ type scrollPosition = {
 
 function App() {
   const [scrollPosition, setScrollPosition] = useState<scrollPosition>({ prev: window.scrollY, current: window.scrollY })
+  const { width, height } = useAppSelector((state) => state.screenSize);
   const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    window.addEventListener('resize', handleScreenSize)
+    return () => {
+      window.removeEventListener('resize', handleScreenSize)
+    }
+  }, [window.screen.width])
+
+  const handleScreenSize = () => {
+    dispatch(setScreenSize([window.screen.width, window.screen.height]));
+    if (width>=768) {
+      dispatch(setShowSubMenuDropdown(false));
+    }
+  }
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);

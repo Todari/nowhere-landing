@@ -14,30 +14,8 @@ const Header = () => {
   const [headerY, setHeaderY] = useState(0);
   const [subMenuY, setSubMenuY] = useState(0);
   const { showHeader, showSubMenuDropdown } = useAppSelector((state) => state.headerState)
+  const {width, height} = useAppSelector((state => state.screenSize));
   const dispatch = useAppDispatch();
-
-  const [screenSize, setScreenSize] = useState({
-    width: window.screen.width,
-    height: window.screen.height
-  })
-
-  useEffect(() => {
-    window.addEventListener('resize', handleScreenSize)
-    console.log(screenSize)
-    return () => {
-      window.removeEventListener('resize', handleScreenSize)
-    }
-  }, [window.screen.width])
-
-  const handleScreenSize = () => {
-    setScreenSize({
-      width: window.screen.width,
-      height: window.screen.height
-    })
-    if (screenSize.width >= 768) {
-      dispatch(setShowSubMenuDropdown(false))
-    }
-  }
 
   useEffect(() => {
     if (showHeader) {
@@ -71,7 +49,7 @@ const Header = () => {
               <NOWHERE_LOGO className="h-10" />
             </motion.div>
           </div>
-          {screenSize.width >= 768 ?
+          {width >= 768 ?
             <Menu /> :
             <SubMenu />
           }
