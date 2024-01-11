@@ -35,12 +35,11 @@ const Header = () => {
 
   return (
     <div className="flex justify-center h-min shrink">
-      <motion.div className="fixed flex w-full flex-col z-20 h-min" onClick={() => { console.log("clicked") }}
+      <motion.div className="fixed flex w-full flex-col z-20 h-min"
         animate={{ y: headerY }}
         transition={{ duration: 0.3 }}>
         <div className='top-0 w-full flex flex-row gap-4 h-16 justify-center items-center bg-black z-20'>
           <div className='flex flex-row gap-4 h-16 items-center bg-black w-5/6'>
-
             <div className='grow flex items-center justify-start'>
               <motion.div className="" onClick={goHome}
                 whileTap={{

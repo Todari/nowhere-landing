@@ -31,26 +31,41 @@ const ArtistCard = ({ id, name, profile, path, soundCloud, instagram, tracks }: 
 
   return (
     <div className="flex flex-col">
-      <div className={id % 2 !== 0 && width < 768 ?
+      <div className={id % 2 !== 0 ?
         'flex flex-row justify-center'
         : 'flex flex-row-reverse justify-center'
       } onClick={handleInfoOpened}>
-        <div className="grow flex flex-col items-center justify-center p-4" >
-          <div className="grow flex items-center">
+        <div className={
+          width < 768 ?
+            "grow flex flex-col items-center justify-center"
+            :
+            "grow flex flex-row items-center justify-center"
+        } >
+          <div className="grow flex items-center justify-center">
             <div className="text-2xl text-white text-center">
               {name}
             </div>
           </div>
-          <div className="grow flex flex-row w-full items-center justify-center">
-            <div className="grow flex justify-center">
+          <div className={
+            width < 768 ?
+            "grow flex flex-row w-full items-center justify-center"
+            :
+            "grow flex flex-col h-full items-center justify-center"
+          }>
+            <div className="grow flex justify-center items-center">
               <INSTAGRAM onClick={(e) => { e.stopPropagation(); window.open(instagram); }} />
             </div>
-            <div className="grow flex justify-center">
+            <div className="grow flex justify-center items-center">
               <SOUNDCLOUD onClick={(e) => { e.stopPropagation(); window.open(soundCloud) }} />
             </div>
           </div>
         </div>
-        <div className="w-full basis-1/2 aspect-square bg-stone-500">
+        <div className={
+          width < 768 ?
+            "w-full basis-1/2 aspect-square bg-stone-500"
+            :
+            "w-full basis-1/3 aspect-square bg-stone-500"
+        }>
         </div>
       </div>
       {
