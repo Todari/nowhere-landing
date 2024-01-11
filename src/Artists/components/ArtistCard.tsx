@@ -1,9 +1,15 @@
+import { ReactComponent as INSTAGRAM } from "../asset/instagram_logo.svg";
+import { ReactComponent as SOUNDCLOUD } from "../asset/soundcloud_logo.svg";
+
 type ArtistCardProps = {
   name: string,
+  profile: string,
   path: string,
+  soundCloud: string,
+  instagram: string,
 }
 
-const ArtistCard = ({name, path} : ArtistCardProps) => {
+const ArtistCard = ({name, profile, path, soundCloud, instagram} : ArtistCardProps) => {
 
   
   return (
