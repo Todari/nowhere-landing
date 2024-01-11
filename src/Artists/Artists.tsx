@@ -13,7 +13,7 @@ const Artists = () => {
         </div>
         :
         <div className="py-20">
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 gap-8">
             <ArtistCard name={'Smasher'} path={''} />
             <ArtistCard name={'Fatrik'} path={''} />
           </div>
