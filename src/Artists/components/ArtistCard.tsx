@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useAppSelector } from "../../hooks";
 import { ReactComponent as INSTAGRAM } from "../asset/instagram_logo.svg";
 import { ReactComponent as SOUNDCLOUD } from "../asset/soundcloud_logo.svg";
+import ReactPlayer from "react-player";
 
 type ArtistCardProps = {
   id: number
@@ -10,15 +11,23 @@ type ArtistCardProps = {
   path: string,
   soundCloud: string,
   instagram: string,
+  tracks: string[],
 }
 
-const ArtistCard = ({ id, name, profile, path, soundCloud, instagram }: ArtistCardProps) => {
+const ArtistCard = ({ id, name, profile, path, soundCloud, instagram, tracks }: ArtistCardProps) => {
   const { width } = useAppSelector((state) => state.screenSize)
   const [infoOpened, setInfoOpened] = useState(false);
 
   const handleInfoOpened = () => {
     setInfoOpened(!infoOpened)
   }
+
+  const trackPlayers: JSX.Element[] = tracks.map(
+    (track) => 
+      <div className="flex">
+        <ReactPlayer url={track} className='w-full' height='50%'/>
+      </div>
+  );
 
   return (
     <div className="flex flex-col">
@@ -65,8 +74,8 @@ const ArtistCard = ({ id, name, profile, path, soundCloud, instagram }: ArtistCa
       }
       {
         infoOpened ?
-          <div className="h-200 bg-stone-800">
-            sss
+          <div className="flex flex-col gap-4">
+            {trackPlayers}
           </div>
           :
           null

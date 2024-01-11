@@ -1,3 +1,6 @@
+import Iframe from "react-iframe"
+import { IIframe } from "react-iframe/types"
+
 type Artist = {
   id: number,
   name: string,
@@ -5,6 +8,7 @@ type Artist = {
   path: string,
   soundCloud: string,
   instagram: string,
+  tracks: string[]
 }
 
 type ArtistList = {
@@ -21,6 +25,10 @@ const ARTIST_LIST: ArtistList =
       path: '/smasher',
       soundCloud: 'https://soundcloud.com/smasher_official',
       instagram: 'https://www.instagram.com/smasher_mk/',
+      tracks: [
+        'https://soundcloud.com/clubwrk/smasher-arkins-yangjae',
+        'https://soundcloud.com/smasher_official/natalie-dont',
+      ],
     },
     {
       id: 1,
@@ -29,6 +37,10 @@ const ARTIST_LIST: ArtistList =
       path: '/fatrik',
       soundCloud: 'https://soundcloud.com/justfatrikmusic',
       instagram: 'https://www.instagram.com/fatrik__/',
+      tracks: [
+        'https://soundcloud.com/justfatrikmusic/no-need-to-high',
+        'https://soundcloud.com/justfatrikmusic/its-like-that'
+      ],
     },
     {
       id: 2,
@@ -37,6 +49,11 @@ const ARTIST_LIST: ArtistList =
       path: '/arkins',
       soundCloud: 'https://soundcloud.com/arkinsofficial',
       instagram: 'https://www.instagram.com/arkins_official/',
+      tracks: [
+        'https://www.youtube.com/watch?v=gr9_5y5JXTs',
+        'https://www.youtube.com/watch?v=u7u80fHlYZc',
+        'https://www.youtube.com/watch?v=OmMTVS6pMSY'
+      ]
     },
     {
       id: 3,
@@ -45,6 +62,10 @@ const ARTIST_LIST: ArtistList =
       path: '/castle-j',
       soundCloud: 'https://soundcloud.com/castle_j_official',
       instagram: 'https://www.instagram.com/djcastle_j__jin/',
+      tracks: [
+        'https://soundcloud.com/soundwhere_official/1004-rework',
+        'https://soundcloud.com/castle_j_official/castle-j-calfskin-set-me-free'
+      ],
     },
   ]
 }
