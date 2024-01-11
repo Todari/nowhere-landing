@@ -1,10 +1,8 @@
-import { useEffect, useState } from "react";
-
 import ArtistCard from "./components/ArtistCard";
 import { useAppSelector } from "../hooks";
 
 const Artists = () => {
-  const {width, height} = useAppSelector((state) => state.screenSize);
+  const { width } = useAppSelector((state) => state.screenSize);
 
   return (
     <div className="bg-black p-12">
@@ -16,8 +14,8 @@ const Artists = () => {
         :
         <div className="py-20">
           <div className="grid grid-cols-3 gap-8">
-          <ArtistCard name={'Smasher'} path={''} />
-          <ArtistCard name={'Fatrik'} path={''} />
+            <ArtistCard name={'Smasher'} path={''} />
+            <ArtistCard name={'Fatrik'} path={''} />
           </div>
         </div>}
     </div>

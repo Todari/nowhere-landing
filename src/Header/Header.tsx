@@ -14,7 +14,7 @@ const Header = () => {
   const [headerY, setHeaderY] = useState(0);
   const [subMenuY, setSubMenuY] = useState(0);
   const { showHeader, showSubMenuDropdown } = useAppSelector((state) => state.headerState)
-  const {width, height} = useAppSelector((state => state.screenSize));
+  const { width } = useAppSelector((state => state.screenSize));
   const dispatch = useAppDispatch();
 
   useEffect(() => {

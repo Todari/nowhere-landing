@@ -20,7 +20,7 @@ type scrollPosition = {
 
 function App() {
   const [scrollPosition, setScrollPosition] = useState<scrollPosition>({ prev: window.scrollY, current: window.scrollY })
-  const { width, height } = useAppSelector((state) => state.screenSize);
+  const { width } = useAppSelector((state) => state.screenSize);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
