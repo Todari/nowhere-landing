@@ -8,15 +8,12 @@ const SubMenu = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <div>
-      {!showSubMenuDropdown ?
-        <div className="flex" onClick={() => { dispatch(setShowSubMenuDropdown(true)) }} >
-          <SUBMENU className="h-8 w-8" />
-        </div>
-        : <div className="flex" onClick={() => { dispatch(setShowSubMenuDropdown(false)) }} >
-          <SUBMENU_CLOSE className="h-8 w-8" />
-        </div>}
-
+    <div className="flex">
+      {!showSubMenuDropdown
+      ?
+      <SUBMENU className="h-8 w-8"  onClick={() => { dispatch(setShowSubMenuDropdown(true)) }} />
+      :
+      <SUBMENU_CLOSE className="h-8 w-8"  onClick={() => { dispatch(setShowSubMenuDropdown(false)) }} />}
     </div>
   )
 }
