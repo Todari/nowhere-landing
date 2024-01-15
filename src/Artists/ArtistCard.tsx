@@ -3,6 +3,7 @@ import { useAppSelector } from "../hooks";
 import { ReactComponent as INSTAGRAM } from "../asset/instagram_logo.svg";
 import { ReactComponent as SOUNDCLOUD } from "../asset/soundcloud_logo.svg";
 import ReactPlayer from "react-player";
+import { twMerge } from "tailwind-merge";
 
 type ArtistCardProps = {
   id: number
@@ -14,8 +15,10 @@ type ArtistCardProps = {
   tracks: string[],
 }
 
+
 const ArtistCard = ({ id, name, profile, path, soundCloud, instagram, tracks }: ArtistCardProps) => {
   const { width } = useAppSelector((state) => state.screenSize)
+
   const [infoOpened, setInfoOpened] = useState(false);
 
   const handleInfoOpened = () => {
@@ -31,10 +34,12 @@ const ArtistCard = ({ id, name, profile, path, soundCloud, instagram, tracks }: 
 
   return (
     <div className="flex flex-col justify-center items-center gap-4">
-      <div className="bg-white w-full aspect-square"/>
-      <div className="text-2xl text-white text-center">
+      <div className="w-full aspect-square">
+        <img src={profile}/>
+      </div>
+      <div className="text-xl text-white text-center">
         {name}
-        </div>
+      </div>
     </div>
 
     // <div className="flex flex-col">
