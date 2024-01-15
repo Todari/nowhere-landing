@@ -21,7 +21,7 @@ const ARTIST_LIST: ArtistList =
     {
       id: 0,
       name: 'Smasher',
-      path: '/smasher',
+      path: 'smasher',
       soundCloud: 'https://soundcloud.com/smasher_official',
       instagram: 'https://www.instagram.com/smasher_mk/',
       tracks: [
@@ -33,7 +33,7 @@ const ARTIST_LIST: ArtistList =
     {
       id: 1,
       name: 'Fatrik',
-      path: '/fatrik',
+      path: 'fatrik',
       soundCloud: 'https://soundcloud.com/justfatrikmusic',
       instagram: 'https://www.instagram.com/fatrik__/',
       tracks: [
@@ -45,7 +45,7 @@ const ARTIST_LIST: ArtistList =
     {
       id: 2,
       name: 'Arkins',
-      path: '/arkins',
+      path: 'arkins',
       soundCloud: 'https://soundcloud.com/arkinsofficial',
       instagram: 'https://www.instagram.com/arkins_official/',
       tracks: [
@@ -58,7 +58,7 @@ const ARTIST_LIST: ArtistList =
     {
       id: 3,
       name: 'Castle J',
-      path: '/castle-j',
+      path: 'castle-j',
       soundCloud: 'https://soundcloud.com/castle_j_official',
       instagram: 'https://www.instagram.com/djcastle_j__jin/',
       tracks: [
@@ -70,7 +70,7 @@ const ARTIST_LIST: ArtistList =
     {
       id: 4,
       name: 'Boyd',
-      path: '/boyd',
+      path: 'boyd',
       soundCloud: 'https://soundcloud.com/castle_j_official',
       instagram: 'https://www.instagram.com/djcastle_j__jin/',
       tracks: [
@@ -82,7 +82,7 @@ const ARTIST_LIST: ArtistList =
     {
       id: 5,
       name: 'Nwan Ji',
-      path: '/nwanji',
+      path: 'nwanji',
       soundCloud: 'https://soundcloud.com/castle_j_official',
       instagram: 'https://www.instagram.com/djcastle_j__jin/',
       tracks: [
@@ -90,6 +90,30 @@ const ARTIST_LIST: ArtistList =
         // 'https://soundcloud.com/castle_j_official/castle-j-calfskin-set-me-free'
       ],
       profile:'nwanji1000.png',
+    },
+    {
+      id: 6,
+      name: 'KAI',
+      path: 'kai',
+      soundCloud: 'https://soundcloud.com/castle_j_official',
+      instagram: 'https://www.instagram.com/djcastle_j__jin/',
+      tracks: [
+        // 'https://soundcloud.com/soundwhere_official/1004-rework',
+        // 'https://soundcloud.com/castle_j_official/castle-j-calfskin-set-me-free'
+      ],
+      profile:'kai1000.png',
+    },
+    {
+      id: 7,
+      name: 'LOODA',
+      path: 'looda',
+      soundCloud: 'https://soundcloud.com/castle_j_official',
+      instagram: 'https://www.instagram.com/djcastle_j__jin/',
+      tracks: [
+        // 'https://soundcloud.com/soundwhere_official/1004-rework',
+        // 'https://soundcloud.com/castle_j_official/castle-j-calfskin-set-me-free'
+      ],
+      profile:'looda1000.png',
     },
   ]
 }

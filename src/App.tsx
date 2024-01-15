@@ -6,12 +6,14 @@ import AboutUs from './AboutUs/AboutUs';
 import Artists from './Artists/Artists';
 import Labels from './Labels/Labels';
 import Albums from './Albums/Albums';
+import ArtistInfo from './Artists/ArtistInfo';
 
 import { Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useAppSelector, useAppDispatch } from './hooks';
 import { setShowHeader, setShowSubMenuDropdown } from '../src/store/headerStateReducer';
 import { setScreenSize } from './store/screenSizeReducer';
+import ARTIST_LIST from './constant/ArtistList';
 
 type scrollPosition = {
   prev: number,
@@ -32,7 +34,7 @@ function App() {
 
   const handleScreenSize = () => {
     dispatch(setScreenSize([window.screen.width, window.screen.height]));
-    if (width>=768) {
+    if (width >= 768) {
       dispatch(setShowSubMenuDropdown(false));
     }
   }
@@ -55,11 +57,12 @@ function App() {
 
   return (
     <div className="App">
-      <Header/>
+      <Header />
       <Routes>
         <Route path='/' Component={Main} />
         <Route path='/about-us' Component={AboutUs} />
         <Route path='/artists' Component={Artists} />
+        <Route path='/artists/: path' Component={ArtistInfo} />
         <Route path='/labels' Component={Labels} />
         <Route path='/albums' Component={Albums} />
       </Routes>

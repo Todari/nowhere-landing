@@ -4,6 +4,7 @@ import { ReactComponent as INSTAGRAM } from "../asset/instagram_logo.svg";
 import { ReactComponent as SOUNDCLOUD } from "../asset/soundcloud_logo.svg";
 import ReactPlayer from "react-player";
 import { twMerge } from "tailwind-merge";
+import { useNavigate } from "react-router-dom";
 
 type ArtistCardProps = {
   id: number
@@ -19,11 +20,8 @@ type ArtistCardProps = {
 const ArtistCard = ({ id, name, profile, path, soundCloud, instagram, tracks }: ArtistCardProps) => {
   const { width } = useAppSelector((state) => state.screenSize)
 
-  const [infoOpened, setInfoOpened] = useState(false);
 
-  const handleInfoOpened = () => {
-    setInfoOpened(!infoOpened)
-  }
+  const navigate = useNavigate();
 
   const trackPlayers: JSX.Element[] = tracks.map(
     (track) =>
@@ -35,7 +33,7 @@ const ArtistCard = ({ id, name, profile, path, soundCloud, instagram, tracks }: 
   return (
     <div className="flex flex-col justify-center items-center gap-4">
       <div className="w-full aspect-square">
-        <img src={profile}/>
+        <img src={profile} />
       </div>
       <div className="text-xl text-white text-center">
         {name}
