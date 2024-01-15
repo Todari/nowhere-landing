@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useAppSelector } from "../../hooks";
+import { useAppSelector } from "../hooks";
 import { ReactComponent as INSTAGRAM } from "../asset/instagram_logo.svg";
 import { ReactComponent as SOUNDCLOUD } from "../asset/soundcloud_logo.svg";
 import ReactPlayer from "react-player";

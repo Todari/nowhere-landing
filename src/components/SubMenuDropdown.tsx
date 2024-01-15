@@ -1,6 +1,6 @@
 import MenuButton from "./MenuButton";
-import MENU_LIST from "../../constant/MenuList";
-import { useAppSelector } from "../../hooks";
+import MENU_LIST from "../constant/MenuList";
+import { useAppSelector } from "../hooks";
 
 const SubMenuDropdown = () => {
   const { showSubMenuDropdown } = useAppSelector(state => state.headerState)

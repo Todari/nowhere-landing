@@ -1,4 +1,4 @@
-import ArtistCard from "./components/ArtistCard";
+import ArtistCard from "./ArtistCard";
 import { useAppSelector } from "../hooks";
 import ARTIST_LIST from "../constant/ArtistList";
 

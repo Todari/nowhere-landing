@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
-import { useAppDispatch  } from "../../hooks";
-import { setShowSubMenuDropdown } from "../../store/headerStateReducer";
+import { useAppDispatch  } from "../hooks";
+import { setShowSubMenuDropdown } from "../store/headerStateReducer";
 
 type MenuButtonProp = {
   title: string,
