@@ -12,7 +12,7 @@ const Artists = () => {
     <div className="bg-black p-12">
         <div className={
           width < 768 ?
-          "py-20 flex flex-col gap-16"
+          "py-20 grid grid-cols-2 gap-8"
           :
           "py-20 grid grid-cols-2 gap-16"
           }>

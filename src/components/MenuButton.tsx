@@ -14,7 +14,7 @@ const MenuButton = ({ title, path }: MenuButtonProp) => {
 
   return (
     <div className='py-2 px-4'>
-      <div className='text-white' onClick={() => { goPath(); dispatch(setShowSubMenuDropdown(false))}}>
+      <div className='text-white text-center' onClick={() => { goPath(); dispatch(setShowSubMenuDropdown(false))}}>
         {title}
       </div>
     </div>

@@ -21,20 +21,9 @@ const Menu = () => {
 
   return (
 
-    <NavigationMenu>
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Item One</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <NavigationMenuLink>Link</NavigationMenuLink>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
-
-    // <div className="flex gap-4">
-    //   {menuList}
-    // </div>
+    <div className="flex gap-4">
+      {menuList}
+    </div>
   )
 }
 
