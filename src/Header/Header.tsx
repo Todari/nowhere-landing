@@ -2,9 +2,9 @@ import { motion } from "framer-motion"
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ReactComponent as NOWHERE_LOGO } from '../asset/nowhere_logo.svg';
-import Menu from "../components/Menu";
-import SubMenu from "../components/SubMenu";
-import SubMenuDropdown from "../components/SubMenuDropdown";
+import Menu from "./Menu";
+import SubMenu from "./SubMenu";
+import SubMenuDropdown from "./SubMenuDropdown";
 import { useAppSelector, useAppDispatch } from "../hooks";
 import { setShowSubMenuDropdown } from '../store/headerStateReducer';
 
