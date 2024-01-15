@@ -19,7 +19,7 @@ const LABEL_LIST: LabelList =
       id: 0,
       name: 'BETTER THAN YOU',
       // path: '/smasher',
-      soundCloud: 'https://soundcloud.com/smasher_official',
+      soundCloud: 'https://soundcloud.com/betterthanyou_official',
       tracks: [
         // 'https://soundcloud.com/clubwrk/smasher-arkins-yangjae',
         // 'https://soundcloud.com/smasher_official/natalie-dont',
@@ -30,7 +30,7 @@ const LABEL_LIST: LabelList =
       id: 1,
       name: 'OROZEE',
       // path: '/smasher',
-      soundCloud: 'https://soundcloud.com/smasher_official',
+      soundCloud: 'https://soundcloud.com/nowhere_nowhere4',
        tracks: [
         // 'https://soundcloud.com/clubwrk/smasher-arkins-yangjae',
         // 'https://soundcloud.com/smasher_official/natalie-dont',
@@ -41,7 +41,7 @@ const LABEL_LIST: LabelList =
       id: 2,
       name: 'WHEREISMYDREAM',
       // path:  '/smasher',
-      soundCloud: 'https://soundcloud.com/smasher_official',
+      soundCloud: 'https://soundcloud.com/nowhere_nowhere3',
        tracks: [
         // 'https://soundcloud.com/clubwrk/smasher-arkins-yangjae',
         // 'https://soundcloud.com/smasher_official/natalie-dont',
@@ -52,7 +52,7 @@ const LABEL_LIST: LabelList =
       id: 3,
       name: 'SOJU RECORDS',
       // path:  '/smasher',
-      soundCloud: 'https://soundcloud.com/smasher_official',
+      soundCloud: 'https://soundcloud.com/soju-gang',
        tracks: [
         // 'https://soundcloud.com/clubwrk/smasher-arkins-yangjae',
         // 'https://soundcloud.com/smasher_official/natalie-dont',
@@ -63,7 +63,7 @@ const LABEL_LIST: LabelList =
       id: 4,
       name: 'SOUNDWHERE',
       // path:  '/smasher',
-      soundCloud: 'https://soundcloud.com/smasher_official',
+      soundCloud: 'https://soundcloud.com/soundwhere_official',
        tracks: [
         // 'https://soundcloud.com/clubwrk/smasher-arkins-yangjae',
         // 'https://soundcloud.com/smasher_official/natalie-dont',
