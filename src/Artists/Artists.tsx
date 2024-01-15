@@ -4,7 +4,7 @@ import ARTIST_LIST from "../constant/ArtistList";
 
 const Artists = () => {
   const { width } = useAppSelector((state) => state.screenSize);
-  const artistList: JSX.Element[] = ARTIST_LIST.list.map(
+  const ArtistCardComponents: JSX.Element[] = ARTIST_LIST.list.map(
     (artist) => <ArtistCard id={artist.id} name={artist.name} path={''} profile={artist.profile} instagram={artist.instagram} soundCloud={artist.soundCloud} tracks={artist.tracks} />
   );
 
@@ -16,7 +16,7 @@ const Artists = () => {
           :
           "py-20 grid grid-cols-2 gap-16"
           }>
-          {artistList}
+          {ArtistCardComponents}
         </div>
     </div>
   )

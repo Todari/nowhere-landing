@@ -14,22 +14,22 @@ const MENU_LIST: MenuList =
     {
       id: 0,
       title: "About Us",
-      path: 'about-us',
+      path: '/about-us',
     },
     {
       id: 1,
       title: "Artists",
-      path: 'artists',
+      path: '/artists',
     },
     {
       id: 2,
       title: "Labels",
-      path: 'labels',
+      path: '/labels',
     },
     {
       id: 3,
       title: "Albums",
-      path: 'albums',
+      path: '/albums',
     },]
 }
 

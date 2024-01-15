@@ -23,7 +23,6 @@ export const screenSizeSlice = createSlice({
 })
 
 export const { setScreenSize } = screenSizeSlice.actions;
-
 export const selectCount = (state: RootState) => state.headerState
 
 export default screenSizeSlice.reducer

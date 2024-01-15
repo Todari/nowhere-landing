@@ -54,7 +54,7 @@ function App() {
   }
 
   return (
-    <div className="w-screen h-[100vdh]">
+    <div className="App">
       <Header/>
       <Routes>
         <Route path='/' Component={Main} />
