@@ -62,7 +62,7 @@ function App() {
         <Route path='/' Component={Main} />
         <Route path='/about-us' Component={AboutUs} />
         <Route path='/artists' Component={Artists} />
-        <Route path='/artists/: path' Component={ArtistInfo} />
+        <Route path='/artists/:path' Component={ArtistInfo} />
         <Route path='/labels' Component={Labels} />
         <Route path='/albums' Component={Albums} />
       </Routes>

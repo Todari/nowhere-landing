@@ -35,7 +35,7 @@ const Header = () => {
 
   return (
     <div className="flex justify-center h-min shrink">
-      <motion.div className="fixed flex w-full flex-col z-20 h-min"
+      <motion.div className="fixed flex w-full flex-col z-40 h-min"
         animate={{ y: headerY }}
         transition={{ duration: 0.3 }}>
         <div className='top-0 w-full flex flex-row gap-4 h-16 justify-center items-center bg-black z-20'>
