@@ -22,6 +22,7 @@
     "lucide-react": "^0.309.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^5.0.1",
     "react-iframe": "^1.8.5",
     "react-player": "^2.14.1",
     "react-redux": "^9.0.4",
