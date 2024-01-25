@@ -17,6 +17,17 @@ module.exports = {
       },
     },
     extend: {
+      // backgroundImage: {
+      //   'smasher': "url('asset/smasher1000.png')",
+      //   'fatrik': "url('asset/fatrik1000.png')",
+      //   'arkins': "url('asset/arkins1000.png')",
+      //   'castle-j': "url('asset/castle-j1000.png')",
+      //   'boyd': "url('asset/boyd1000.png')",
+      //   'nwanji': "url('asset/nwanji1000.png')",
+      //   'kai': "url('asset/kai1000.png')",
+      //   'looda': "url('asset/looda1000.png')",
+      // },
+
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

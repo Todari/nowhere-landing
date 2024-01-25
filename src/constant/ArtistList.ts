@@ -65,7 +65,7 @@ const ARTIST_LIST: ArtistList =
         'https://soundcloud.com/soundwhere_official/1004-rework',
         'https://soundcloud.com/castle_j_official/castle-j-calfskin-set-me-free'
       ],
-      profile:'castlej1000.png',
+      profile:'castle-j1000.png',
     },
     {
       id: 4,

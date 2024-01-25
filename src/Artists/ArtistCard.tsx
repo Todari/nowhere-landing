@@ -32,8 +32,11 @@ const ArtistCard = ({ id, name, profile, path, soundCloud, instagram, tracks }: 
 
   return (
     <div className="flex flex-col justify-center items-center gap-4">
-      <div className="w-full aspect-square">
-        <img src={profile} />
+      <div className={"w-full aspect-square bg-cover"}
+      style={{
+        backgroundImage : `url(${profile})`
+      }}>
+        {/* <img src={profile} /> */}
       </div>
       <div className="text-xl text-white text-center">
         {name}

@@ -10,16 +10,18 @@ const ArtistInfo = () => {
     return artist.path === params.path
   })
 
-  const profile = artist?.profile
+  // const profile = artist?.profile
 
   return (
     <div>
       {
         artist ?
           <div className="flex h-[100dvh] justify-center items-start py-24">
-            <div className="aspect-square w-1/2 border-2 flex">\
-              <div className={twMerge("w-full aspect-square", `bg-[url(./asset/${profile})]`)}>
-                {/* <img src={artist.profile} /> */}
+            <div className="aspect-square w-full flex items-center">\
+              <div className="w-full aspect-square bg-cover"
+              style={{
+                backgroundImage : `url(${artist.profile})`
+              }}>
               </div>
             </div>
           </div > :
