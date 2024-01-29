@@ -28,9 +28,9 @@ const Header = () => {
 
   useEffect(() => {
     if (showSubMenuDropdown) {
-      setSubMenuY(64)
+      setSubMenuY(0)
     } else {
-      setSubMenuY(-240)
+      setSubMenuY(-344)
     }
   }, [showSubMenuDropdown])
 
