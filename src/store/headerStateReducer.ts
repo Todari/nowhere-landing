@@ -4,11 +4,13 @@ import type { RootState } from './store'
 interface HeaderState {
   showHeader: boolean
   showSubMenuDropdown: boolean
+  transparent: boolean
 }
 
 const initialState: HeaderState = {
   showHeader: true,
-  showSubMenuDropdown: false
+  showSubMenuDropdown: false,
+  transparent: false
 }
 
 export const headerStateSlice = createSlice({
@@ -21,12 +23,16 @@ export const headerStateSlice = createSlice({
     setShowSubMenuDropdown: ( state, action: PayloadAction<boolean>) => {
       state.showSubMenuDropdown = action.payload
     },
+    setTransparent: ( state, action: PayloadAction<boolean>) => {
+      state.transparent = action.payload
+    },
   }
 })
 
 export const {
   setShowHeader,
   setShowSubMenuDropdown,
+  setTransparent
 } = headerStateSlice.actions;
 
 export const selectCount = (state: RootState) => state.headerState

@@ -3,6 +3,7 @@ import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import LabelInfo from "./LabelInfo";
 
+
 type LabelCardProps = {
   id: number,
   name: string,
@@ -38,7 +39,7 @@ const LabelCard = ({ id, name, profile, soundCloud, tracks, description }: Label
           </div>
         </div>
       </div>
-      {showInfo ? <LabelInfo /> : null}
+      {showInfo ? <LabelInfo tracks={tracks} /> : null}
       <div className="flex w-full h-8 justify-center items-center"
         onClick={infoHandler}>
         {showInfo ?

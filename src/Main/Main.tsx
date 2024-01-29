@@ -2,9 +2,13 @@ import { ReactComponent as NO_WHERE } from '../asset/no_where.svg';
 import { ReactComponent as NOW_HERE } from '../asset//now_here.svg';
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
+import { setTransparent } from "@/store/headerStateReducer";
+import { useAppDispatch } from "../hooks";
 
 const Main = () => {
   const landingContainerRef = useRef(null);
+  const dispatch = useAppDispatch();
+  dispatch(setTransparent(true));
   
 
   return (
